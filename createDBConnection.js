@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { cryptoSchema } = require("./schema/schema");
+require('dotenv').config();
 
 const CONNECTION_STRING = process.env.CONNECTION_STRING;
 

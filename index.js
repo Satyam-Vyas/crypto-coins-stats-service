@@ -5,10 +5,11 @@ const { getCoinStats } = require("./helper/getCoinStats");
 const { fetchCoinsData } = require("./helper/fetchCoinsData");
 const { calculateDeviation } = require("./utils/calculateDeviation");
 const { createDBConnection } = require("./createDBConnection");
+require('dotenv').config();
 
 // Express setup
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Instantiate DB connection
 createDBConnection();
@@ -24,5 +25,5 @@ app.get("/deviation", calculateDeviation);
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+    console.log(`Server running on port ${PORT}`);
+  });
